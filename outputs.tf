@@ -50,6 +50,6 @@ output "policy_assignment_identities" {
   value = local.policy_assignment_identities
 } 
 
-output "policy_role_assignments " {
+output "policy_role_assignments" {
   value = local.policy_role_assignments
 } 
