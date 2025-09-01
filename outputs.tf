@@ -40,3 +40,16 @@ output "role_definition_resource_ids" {
   description = "A map of role definition names to their resource ids."
   value       = { for k, v in azapi_resource.role_definitions : k => v.id }
 }
+
+# Debug
+output "policy_assignments_user_assigned_identity" {
+  value = local.policy_assignments_user_assigned_identity
+}
+
+output "policy_assignment_identities" {
+  value = local.policy_assignment_identities
+} 
+
+output "policy_role_assignments " {
+  value = local.policy_role_assignments
+} 
