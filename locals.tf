@@ -83,7 +83,7 @@ locals {
 
 locals {
   policy_assignments_user_assigned_identity = {
-    for k, v in local.policy_assignments : k => keys(v.assignment.identity.userAssignedIdentities) if can(v.assignment.identity.userAssignedIdentities) && length(v.assignment.identity.userAssignedIdentities) > 0
+    for k, v in local.policy_assignments : k => keys(v.assignment.identity.userAssignedIdentities) if try(length(v.assignment.identity.userAssignedIdentities) > 0, false)
   }
 }
 
