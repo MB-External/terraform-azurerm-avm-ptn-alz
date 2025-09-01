@@ -53,3 +53,7 @@ output "policy_assignment_identities" {
 output "policy_role_assignments" {
   value = local.policy_role_assignments
 } 
+
+output "policy_assignments" {
+  value = local.policy_assignments
+} 
