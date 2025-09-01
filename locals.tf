@@ -109,6 +109,6 @@ locals {
 
 locals {
   policy_assignment_identities = {
-    for k, v in azapi_resource.policy_assignments : k => contains(keys(data.azapi_resource.policy_user_assigned_identities), k) ? data.azapi_resource.policy_user_assigned_identities[k].output.properties.principalId : try(v.identity[0].principal_id, tostring(null))
+    for k, v in azapi_resource.policy_assignments : k => contains(keys(local.policy_assignments_user_assigned_identity), k) ? data.azapi_resource.policy_user_assigned_identities[k].output.properties.principalId : try(v.identity[0].principal_id, tostring(null))
   }
 }
